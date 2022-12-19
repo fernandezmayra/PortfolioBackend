@@ -4,6 +4,8 @@ import javax.validation.constraints.NotBlank;
 
 public class dtoProyecto {
     @NotBlank
+    private String id;
+    @NotBlank
     private String nombreProy;
     @NotBlank
     private String descProy;
@@ -13,7 +15,8 @@ public class dtoProyecto {
     public dtoProyecto() {
     }
 
-    public dtoProyecto(String nombreProy, String descProy, String imgProy) {
+    public dtoProyecto(String id, String nombreProy, String descProy, String imgProy) {
+        this.id = id;
         this.nombreProy = nombreProy;
         this.descProy = descProy;
         this.imgProy = imgProy;
@@ -41,6 +44,14 @@ public class dtoProyecto {
 
     public void setImgProy(String imgProy) {
         this.imgProy = imgProy;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
     
 }

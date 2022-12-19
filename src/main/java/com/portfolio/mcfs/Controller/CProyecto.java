@@ -33,7 +33,7 @@ public class CProyecto {
     }
     
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Proyecto> getById(@PathVariable("id")int id){
+    public ResponseEntity<Proyecto> getById(@PathVariable("id")String id){
         if(!sProyecto.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
@@ -43,7 +43,7 @@ public class CProyecto {
     }
     
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id")int id){
+    public ResponseEntity<?> delete(@PathVariable("id")String id){
         if(!sProyecto.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
@@ -58,13 +58,13 @@ public class CProyecto {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         
-        Proyecto proyecto = new Proyecto(dtoproyecto.getNombreProy(), dtoproyecto.getDescProy(), dtoproyecto.getImgProy());
+        Proyecto proyecto = new Proyecto(dtoproyecto.getId(), dtoproyecto.getNombreProy(), dtoproyecto.getDescProy(), dtoproyecto.getImgProy());
         sProyecto.save(proyecto);
         return new ResponseEntity(new Mensaje("Proyecto creado"), HttpStatus.OK);
     }
     
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoProyecto dtoproyecto){
+    public ResponseEntity<?> update(@PathVariable("id") String id, @RequestBody dtoProyecto dtoproyecto){
         if(!sProyecto.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
@@ -74,6 +74,7 @@ public class CProyecto {
         
         Proyecto proyecto = sProyecto.getOne(id).get();
         
+        proyecto.setId(dtoproyecto.getId());
         proyecto.setNombreProy(dtoproyecto.getNombreProy());
         proyecto.setDescProy(dtoproyecto.getDescProy());
         proyecto.setImgProy(dtoproyecto.getImgProy());

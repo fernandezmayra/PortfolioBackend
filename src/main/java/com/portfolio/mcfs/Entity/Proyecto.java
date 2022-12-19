@@ -8,8 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class Proyecto {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private String id;
     private String nombreProy;
     private String descProy;
     private String imgProy;
@@ -17,17 +16,18 @@ public class Proyecto {
     public Proyecto() {
     }
 
-    public Proyecto(String nombreProy, String descProy, String imgProy) {
+    public Proyecto(String id, String nombreProy, String descProy, String imgProy) {
+        this.id = id;
         this.nombreProy = nombreProy;
         this.descProy = descProy;
         this.imgProy = imgProy;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
