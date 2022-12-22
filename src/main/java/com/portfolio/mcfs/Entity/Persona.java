@@ -37,13 +37,13 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(int id, String nombre, String apellido, String descripcion, String img, String titulo, String email, String imgBackground) {
-        this.id = id;
+    public Persona(String nombre, String apellido, String descripcion, String img, String titulo, String email, String imgBackground) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;
         this.img = img;
         this.titulo = titulo;
+        this.email = email;
         this.imgBackground = imgBackground;
     }
 
