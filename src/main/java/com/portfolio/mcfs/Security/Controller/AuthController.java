@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.portfolio.mcfs.Security.Controller;
 
 import com.portfolio.mcfs.Security.Dto.JwtDto;
@@ -35,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin
+@CrossOrigin(origins = "https://miportfolio-1.web.app")
 public class AuthController {
     @Autowired
     PasswordEncoder passwordEncoder;
