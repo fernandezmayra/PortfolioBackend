@@ -28,12 +28,14 @@ public class CHys {
     @Autowired
     Shys shys;
 
+    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @GetMapping("/lista")
     public ResponseEntity<List<hys>> list() {
         List<hys> list = shys.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @GetMapping("/detail/{id}")
     public ResponseEntity<hys> getById(@PathVariable("id") int id) {
         if (!shys.existsById(id)) {
@@ -45,6 +47,7 @@ public class CHys {
         return new ResponseEntity(hYs, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoHys dtohys) {
@@ -61,6 +64,7 @@ public class CHys {
         return new ResponseEntity(new Mensaje("Skill agregada"), HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoHys dtohys) {
@@ -84,6 +88,7 @@ public class CHys {
         return new ResponseEntity(new Mensaje("Skill actualizada"), HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {

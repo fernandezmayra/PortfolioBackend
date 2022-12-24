@@ -27,12 +27,14 @@ public class CEducacion {
     @Autowired
     SEducacion sEducacion;
     
+    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @GetMapping("/lista")
     public ResponseEntity<List<Educacion>> list(){
         List<Educacion> list = sEducacion.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
     
+    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @GetMapping("/detail/{id}")
     public ResponseEntity<Educacion> getById(@PathVariable("id")int id){
         if(!sEducacion.existsById(id)){
@@ -43,6 +45,7 @@ public class CEducacion {
         return new ResponseEntity(educacion, HttpStatus.OK);
     }
     
+    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id")int id){
@@ -54,6 +57,7 @@ public class CEducacion {
         return new ResponseEntity(new Mensaje("Educacion eliminada"), HttpStatus.OK);
     }
     
+    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoEducacion dtoeducacion){
@@ -66,6 +70,7 @@ public class CEducacion {
         return new ResponseEntity(new Mensaje("Educacion creada"), HttpStatus.OK);
     }
     
+    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoEducacion dtoeducacion){
