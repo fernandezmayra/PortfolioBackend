@@ -27,14 +27,12 @@ public class CProyecto {
     @Autowired
     SProyecto sProyecto;
     
-    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @GetMapping("/lista")
     public ResponseEntity<List<Proyecto>> list(){
         List<Proyecto> list = sProyecto.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
     
-    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @GetMapping("/detail/{id}")
     public ResponseEntity<Proyecto> getById(@PathVariable("id")String id){
         if(!sProyecto.existsById(id)){
@@ -45,7 +43,6 @@ public class CProyecto {
         return new ResponseEntity(proyecto, HttpStatus.OK);
     }
     
-    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id")String id){
@@ -57,7 +54,6 @@ public class CProyecto {
         return new ResponseEntity(new Mensaje("Proyecto eliminado"), HttpStatus.OK);
     }
     
-    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoProyecto dtoproyecto){
@@ -70,7 +66,6 @@ public class CProyecto {
         return new ResponseEntity(new Mensaje("Proyecto creado"), HttpStatus.OK);
     }
     
-    @CrossOrigin(origins = "https://miportfolio-1.web.app")
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") String id, @RequestBody dtoProyecto dtoproyecto){
