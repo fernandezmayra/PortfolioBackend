@@ -9,14 +9,14 @@ public class dtoExperiencia {
     @NotBlank
     private String descripcionE;
     @NotBlank
-    private int inicio;
+    private String inicio;
     @NotBlank
-    private int fin;
+    private String fin;
 
     public dtoExperiencia() {
     }
 
-    public dtoExperiencia(String nombreE, String descripcionE, int inicio, int fin) {
+    public dtoExperiencia(String nombreE, String descripcionE, String inicio, String fin) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
         this.inicio = inicio;
@@ -39,19 +39,19 @@ public class dtoExperiencia {
         this.descripcionE = descripcionE;
     }
 
-    public int getInicio() {
+    public String getInicio() {
         return inicio;
     }
 
-    public void setInicio(int inicio) {
+    public void setInicio(String inicio) {
         this.inicio = inicio;
     }
 
-    public int getFin() {
+    public String getFin() {
         return fin;
     }
 
-    public void setFin(int fin) {
+    public void setFin(String fin) {
         this.fin = fin;
     }
     
