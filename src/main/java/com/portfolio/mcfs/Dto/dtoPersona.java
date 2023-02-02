@@ -17,11 +17,14 @@ public class dtoPersona {
     private String email;
     @NotBlank
     private String imgBackground;
+    private String github;
+    private String facebook;
+    private String instagram;
 
     public dtoPersona() {
     }
 
-    public dtoPersona(String nombre, String apellido, String descripcion, String img, String titulo, String email, String imgBackground) {
+    public dtoPersona(String nombre, String apellido, String descripcion, String img, String titulo, String email, String imgBackground, String github, String facebook, String instagram) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;
@@ -29,6 +32,9 @@ public class dtoPersona {
         this.titulo = titulo;
         this.email = email;
         this.imgBackground = imgBackground;
+        this.github = github;
+        this.facebook = facebook;
+        this.instagram = instagram;
     }
 
     public String getNombre() {
@@ -85,6 +91,30 @@ public class dtoPersona {
 
     public void setImgBackground(String imgBackground) {
         this.imgBackground = imgBackground;
+    }
+
+    public String getGithub() {
+        return github;
+    }
+
+    public void setGithub(String github) {
+        this.github = github;
+    }
+
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public String getInstagram() {
+        return instagram;
+    }
+
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
     }
     
 }

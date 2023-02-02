@@ -34,10 +34,16 @@ public class Persona {
     
     private String imgBackground;
     
+    private String github;
+    
+    private String facebook;
+    
+    private String instagram;
+    
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String descripcion, String img, String titulo, String email, String imgBackground) {
+    public Persona(String nombre, String apellido, String descripcion, String img, String titulo, String email, String imgBackground, String github, String facebook, String instagram) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;
@@ -45,6 +51,9 @@ public class Persona {
         this.titulo = titulo;
         this.email = email;
         this.imgBackground = imgBackground;
+        this.github = github;
+        this.facebook = facebook;
+        this.instagram = instagram;
     }
 
     public int getId() {
@@ -109,6 +118,30 @@ public class Persona {
 
     public void setImgBackground(String imgBackground) {
         this.imgBackground = imgBackground;
+    }
+
+    public String getGithub() {
+        return github;
+    }
+
+    public void setGithub(String github) {
+        this.github = github;
+    }
+
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public String getInstagram() {
+        return instagram;
+    }
+
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
     }
  
 }
