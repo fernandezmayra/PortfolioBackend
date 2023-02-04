@@ -61,7 +61,7 @@ public class PersonaController {
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
         
-        Persona persona = new Persona(dtopersona.getNombre(), dtopersona.getApellido(), dtopersona.getDescripcion(), dtopersona.getTitulo(), dtopersona.getEmail(), dtopersona.getImg(), dtopersona.getImgBackground(), dtopersona.getGithub(), dtopersona.getFacebook(), dtopersona.getInstagram());
+        Persona persona = new Persona(dtopersona.getNombre(), dtopersona.getApellido(), dtopersona.getDescripcion(), dtopersona.getTitulo(), dtopersona.getEmail(), dtopersona.getImg(), dtopersona.getImgBackground(), dtopersona.getTwitter(), dtopersona.getFacebook(), dtopersona.getInstagram());
                                       
         personaService.save(persona);
         return new ResponseEntity(new Mensaje("Persona creada"), HttpStatus.OK);
@@ -89,7 +89,7 @@ public class PersonaController {
         persona.setTitulo(dtopersona.getTitulo());
         persona.setEmail(dtopersona.getEmail());
         persona.setImgBackground(dtopersona.getImgBackground());
-        persona.setGithub(dtopersona.getGithub());
+        persona.setTwitter(dtopersona.getTwitter());
         persona.setFacebook(dtopersona.getFacebook());
         persona.setInstagram(dtopersona.getInstagram());
         
